@@ -1,4 +1,13 @@
-# bandapp-vue
+# BandApp (working title)
+
+## description
+This is a sample vue.js application. The goal is to make a frontend, with that you can manage bands, members and dates 
+(like rehearsals and gigs).
+This project is still work in progress. 
+
+For keeping things simple, I will start with no api and no persistence layer and save all data in local storage.  
+
+Technologies used in this project are: Vue.js, VueCli, VueRouter, VueMaterial, SCSS.
 
 ## Project setup
 ```
