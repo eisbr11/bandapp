@@ -11,6 +11,7 @@
                     <v-card-actions>
                         <v-btn flat @click="goBack()">Cancel</v-btn>
                         <v-btn color="primary" type="submit">Submit</v-btn>
+                        <v-btn v-if="this.id" color="alert" @click="deleteBand()">Delete this Band</v-btn>
                     </v-card-actions>
                 </v-form>
             </v-card>
@@ -49,7 +50,29 @@
         props: [ 'id' ],
         methods: {
             loadBand() {
-                this.band = {}
+                const bands = this.$localStorage.get('bands');
+                this.bandIndex = bands.findIndex( band => band.id === this.id );
+                if (this.bandIndex >= 0) {
+                    this.band = bands[this.bandIndex]
+                } else {
+                    this.goBack();
+                }
+            },
+            deleteBand() {
+                if (confirm('Do you really want to delete the band?')) {
+                    const bands = this.$localStorage.get('bands');
+                    const bandIndex = bands.findIndex(band => band.id === this.id);
+                    bands.splice(bandIndex, 1);
+                    this.$localStorage.set('bands', bands);
+                    this.goBack();
+                    /*
+                    const notes = this.$localStorage.get('notes');
+                    const noteIndex = notes.findIndex(note => note.id === this.id);
+                    notes.splice(noteIndex, 1);
+                    this.$localStorage.set('notes', notes);
+                    this.$router.push('/');
+                    */
+                }
             },
             saveBand() {
                 let bands = this.$localStorage.get('bands');

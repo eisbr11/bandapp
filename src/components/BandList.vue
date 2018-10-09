@@ -10,9 +10,10 @@
                         <v-list-tile v-for="band of bands" v-bind:key="band.id">
                             <v-list-tile-content>
                                 {{ band.name }}, {{ band.genre }}
+                                <small>{{ parseTimestamp(band.timestamp) }}</small>
                             </v-list-tile-content>
                             <v-list-tile-action>
-                                <v-btn icon ripple>
+                                <v-btn icon ripple @click="goToEdit(band.id)">
                                     <v-icon color="primary">edit</v-icon>
                                 </v-btn>
                             </v-list-tile-action>
@@ -44,6 +45,8 @@
 </template>
 
 <script>
+    const moment = require('moment');
+
     export default {
         name: "BandList",
         data() {
@@ -58,6 +61,17 @@
             },
             goToNew() {
                 this.$router.push({ name: 'Create Band'})
+            },
+            goToEdit(id) {
+                this.$router.push({
+                    name: 'Edit Band',
+                    params: {
+                        id: id
+                    }
+                })
+            },
+            parseTimestamp(time) {
+                return moment(time).fromNow();
             }
         },
         mounted() {
