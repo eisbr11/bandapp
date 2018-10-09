@@ -1,6 +1,6 @@
 # BandApp (working title)
 
-## description
+## Description
 This is a sample vue.js application. The goal is to make a frontend, with that you can manage bands, members and dates 
 (like rehearsals and gigs).
 This project is still work in progress. 

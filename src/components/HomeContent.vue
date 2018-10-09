@@ -1,41 +1,34 @@
 <template>
-    <div class="HomeContent">
-        <div class="md-layout md-gutter">
-            <div class="md-layout-item md-medium-size-33 md-xsmall-size-100">
-                <div class="md-layout">
-                    <div class="md-layout-item md-size-100 text-align-center">
-                        <md-icon class="md-size-5x">group</md-icon>
-                    </div>
-                    <div class="md-layout-item md-display-1 text-align-center">
-                        With this App you can create new Bands
-                    </div>
-                </div>
-            </div>
-            <div class="md-layout-item md-medium-size-33 md-xsmall-size-100">
-                <div class="md-layout">
-                    <div class="md-layout-item md-size-100 text-align-center">
-                        <md-icon class="md-size-5x">person</md-icon>
-                    </div>
-                    <div class="md-layout-item md-display-1 text-align-center">
-                        Add new members to bands
-                    </div>
-                </div>
-            </div>
-            <div class="md-layout-item md-medium-size-33 md-xsmall-size-100">
-                <div class="md-layout">
-                    <div class="md-layout-item md-size-100 text-align-center">
-                        <md-icon class="md-size-5x">date_range</md-icon>
-                    </div>
-                    <div class="md-layout-item md-display-1 text-align-center">
-                        Set up dates, like rehearsals and concerts for your band
-                    </div>
-                </div>
-            </div>
-            <div class="md-layout-item md-size-100 text-align-center">
-                Created by Felix Schliemann, Github: <a href="https://github.com/eisbr11">https://github.com/eisbr11</a>
-            </div>
-        </div>
-    </div>
+    <v-container grid-list-md text-xs-center fill-height>
+        <v-layout align-center>
+            <v-layout justify-space-around row wrap>
+                <v-flex d-flex xs12 sm4>
+                    <v-card dark color="green" to="/bands">
+                        <span class="text-xs-center">
+                            <v-icon class="very-large-icon">group</v-icon>
+                        </span>
+                        <v-card-text class="display-1 pt-0">With this App you can create new Bands</v-card-text>
+                    </v-card>
+                </v-flex>
+                <v-flex d-flex xs12 sm4>
+                    <v-card dark color="blue">
+                        <span class="text-xs-center">
+                            <v-icon class="very-large-icon">person</v-icon>
+                        </span>
+                        <v-card-text class="display-1">Add new members to bands</v-card-text>
+                    </v-card>
+                </v-flex>
+                <v-flex d-flex xs12 sm4>
+                    <v-card dark color="indigo">
+                        <span class="text-xs-center">
+                            <v-icon class="very-large-icon">date_range</v-icon>
+                        </span>
+                        <v-card-text class="display-1">Set up dates, like rehearsals and concerts for your band</v-card-text>
+                    </v-card>
+                </v-flex>
+            </v-layout>
+        </v-layout>
+    </v-container>
 </template>
 
 <script>
@@ -45,12 +38,7 @@
 </script>
 
 <style scoped lang="scss">
-    .md-layout {
-        .md-layout-item {
-            margin: 0.5em 0;
-        }
-    }
-    .text-align-center {
-        text-align: center;
+    .very-large-icon {
+        font-size: 126px;
     }
 </style>
