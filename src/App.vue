@@ -70,17 +70,5 @@
 </script>
 
 <style lang="scss">
-    @import "~vue-material/dist/theme/engine"; // Import the theme engine
 
-    @include md-register-theme("default", (
-        primary: md-get-palette-color(red, A200), // The primary color of your application
-        accent: md-get-palette-color(blue, A200), // The accent or secondary color
-        //theme: dark
-    ));
-
-    @import "~vue-material/dist/theme/all"; // Apply the theme
-
-    .md-app {
-        height: 100vh;
-    }
 </style>
